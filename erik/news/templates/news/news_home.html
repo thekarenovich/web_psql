@@ -1,3 +1,5 @@
+{# Новости #}
+
 {% extends 'main/base.html' %}
 
 {% block title %}Новости на сайте{% endblock %}
@@ -5,6 +7,7 @@
 {% block content %}
     <div class="features">
         <h1>Новости на сайте</h1>
+<!--        <a class='add' href="{% url 'create' %}"><button class="btn btn-primary">Добавить</button></a>-->
         {% if news %}
             {% for el in news %}
                 <div class="alert alert-warning">
@@ -16,7 +19,6 @@
         {% else %}
             <p>У вас нет записей!</p>
         {% endif %}
-
-        {# Комментарий #}
     </div>
 {% endblock %}
+
