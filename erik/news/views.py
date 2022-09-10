@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import DetailView, UpdateView, DeleteView
+from django.views.generic import DetailView, UpdateView, DeleteView, CreateView, ListView
 from .models import Articles
 from .forms import ArticlesForm
 
@@ -36,7 +36,7 @@ class NewsUpdateView(UpdateView):
     model = Articles
     template_name = 'news/create.html'
 
-    # fields = ['title', 'anons', 'full_text', 'date']
+    # fields = ['title', 'anons', 'full_text']
     form_class = ArticlesForm
 
 
