@@ -5,11 +5,23 @@
 {% block title %}Удаление статьи{% endblock %}
 
 {% block content %}
-    <div class="features">
-        <h1>Удаление статьи</h1>
+
+<div class="modal modal-alert position-static d-block bg-dark py-5" tabindex="-1" role="dialog" id="modalChoice">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-3 shadow">
+      <div class="modal-body p-4 text-center">
+        <h5 class="mb-0">Вы действительно хотите удалить статью?</h5>
+        <p class="mb-0">После удаления статью нельзя будет найти или восстановить</p>
+      </div>
         <form method="post">
-            {% csrf_token %}
-            <button class="btn btn-danger" type="submit">Удалить статью</button>
+          {% csrf_token %}
+          <div class="modal-footer flex-nowrap p-0">
+            <button type="submit" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-end">Да, уверен</button>
+            <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0"><a href="{% url 'news_home' %}" style="text-decoration: none; ">Отменить</a></button>
+          </div>
         </form>
     </div>
+  </div>
+</div>
+
 {% endblock %}
