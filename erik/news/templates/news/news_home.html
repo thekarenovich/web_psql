@@ -2,23 +2,31 @@
 
 {% extends 'main/base.html' %}
 
-{% block title %}Новости на сайте{% endblock %}
+{% block title %}Мои статьи{% endblock %}
 
 {% block content %}
-    <div class="features">
-        <h1>Новости на сайте</h1>
-<!--        <a class='add' href="{% url 'create' %}"><button class="btn btn-primary">Добавить</button></a>-->
-        {% if news %}
-            {% for el in news %}
-                <div class="alert alert-warning">
-                    <h3>{{ el.title }}</h3>
-                    <p>{{ el.anons }}</p>
-                    <a href="{% url 'news-detail' el.id %}" class="btn btn-warning">Прочитать</a>
-                </div>
-            {% endfor %}
-        {% else %}
-            <p>У вас нет записей!</p>
-        {% endif %}
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-12">
+                {% if news %}
+                    {% for item in news %}
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <h5 class="card-title">{{ item.title }}</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ item.anons }}</p>
+                            <a href="{% url 'news-detail' item.id %}" class="btn btn-dark">Прочитать</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            {{ item.date }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                <h1><strong>У вас нет статьей!</strong></h1>
+                {% endif %}
+            </div>
+        </div>
     </div>
 {% endblock %}
-
