@@ -9,7 +9,7 @@
         <h1>{{ article.title|linebreaksbr  }}</h1>
         <p>{{ article.date }}</p>
         <p>{{ article.full_text|linebreaksbr  }}</p>
-        <a href="{% url 'news-update' article.id %}" class="btn btn-primary">Редактировать</a>
-        <a href="{% url 'news-delete' article.id %}" class="btn btn-danger">Удалить</a>
+        <a href="{% url 'news-update' article.id %}" class="btn btn-outline-dark">Редактировать</a>
+        <a href="{% url 'news-delete' article.id %}" class="btn btn-dark">Удалить</a>
     </div>
 {% endblock %}
