@@ -1,4 +1,5 @@
 pip3 install django
+pip3 install psycopg2-binary
 
 django-admin startproject
 python3 manage.py runserver
